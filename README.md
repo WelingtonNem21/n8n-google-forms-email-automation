@@ -35,8 +35,9 @@ Explorar integrações entre ferramentas, automação de processos e comunicaç�
 2. Importe o arquivo no n8n.
 3. Configure suas próprias credenciais do Google Sheets e Gmail.
 4. Ajuste os dados conforme sua necessidade.
-5. Execute e teste a automação.
+6. Execute e teste a automação.
 
 ## Autor
 
 Welington Alves
+![n8n](https://img.shields.io/badge/n8n-Automation-8b5cf6?logo=n8n&logoColor=white)
