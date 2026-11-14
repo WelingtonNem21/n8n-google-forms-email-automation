@@ -1,0 +1,113 @@
+{
+  "name": "primeiro projeto n8n",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1Tj5Es9DENBtVr1Bqh8qYpX5IqujIFTow1E2dOPmDUGw/edit?gid=60109638#gid=60109638",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 60109638,
+          "mode": "list",
+          "cachedResultName": "Respostas ao formulário 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Tj5Es9DENBtVr1Bqh8qYpX5IqujIFTow1E2dOPmDUGw/edit#gid=60109638"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -464,
+        -368
+      ],
+      "id": "92cc62f1-3e68-40bb-acb1-330092af0f7c",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "bGgtPbCiU1yfm0Ua",
+          "name": "Google Sheets Trigger account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json['Digite seu e-mail'] }}",
+        "subject": "Recebemos seu contato!",
+        "emailType": "text",
+        "message": "=Olá, tudo bem?\n\nMeu nome é {{ $json['Digite seu nome  completo'] }}, tenho {{ $json['Digite sua idade'] }} anos e gostaria de demonstrar meu interesse em oportunidades na área de programação e desenvolvimento de software.\n\nAtualmente, tenho conhecimentos em {{ $json['Qual linguagem de programação você tem conhecimento  '] }} e resido no Rio de Janeiro.\n\nEstou à disposição para conversar e fornecer mais informações sobre meu perfil e minhas experiências.\n\nAgradeço pela atenção e aguardo um retorno.\n\nAtenciosamente,\n{{ $json['Digite seu nome  completo'] }}\nE-mail: {{ $json['Digite seu e-mail'] }}\nTelefone: {{ $json['Digite seu numero de celular'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -240,
+        -368
+      ],
+      "id": "8eff2714-ced2-478d-b648-bded70f64187",
+      "name": "Send a message",
+      "webhookId": "040162c7-a8af-4448-8b08-7818c24d1bca",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "tcp1rujjRONE91LM",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Google Sheets Trigger": [
+      {
+        "json": {
+          "Carimbo de data/hora": "14/11/2026 15:14:05",
+          "Digite seu nome  completo": "Priscila Gabrielly Teresinha Cavalcanti",
+          "Digite sua idade": 47,
+          "Qual linguagem de programação você tem conhecimento  ": "Java",
+          "Qual estando você mora": "Minas gerais",
+          "Coluna 6": "",
+          "Digite seu e-mail": "welingtonalvesper@gmail.com",
+          "Digite seu numero de celular": "(65) 99451-2380"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "29ab962c-3ab7-4be3-b215-f21966f13ba4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "63b75a3bd80886e526f903088a636a7d4e7200d83bff264207eb93ab39568cd8"
+  },
+  "nodeGroups": [],
+  "id": "oGNEC6Nb5b8eVdPj",
+  "tags": []
+}
